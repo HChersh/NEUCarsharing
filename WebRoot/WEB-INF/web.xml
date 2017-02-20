@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>jspclass</display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxDeleteServlet</servlet-name>
+    <servlet-class>servlet.AjaxDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxUpdateServlet</servlet-name>
+    <servlet-class>servlet.AjaxUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Refresh</servlet-name>
+    <servlet-class>servlet.Refresh</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxApplicationServlet</servlet-name>
+    <servlet-class>servlet.AjaxApplicationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxView</servlet-name>
+    <servlet-class>servlet.AjaxView</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FastRelease</servlet-name>
+    <servlet-class>servlet.FastRelease</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetOrderinfo</servlet-name>
+    <servlet-class>servlet.GetOrderinfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ListShowing</servlet-name>
+    <servlet-class>servlet.ListShowing</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChatResponse</servlet-name>
+    <servlet-class>servlet.ChatResponse</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Join</servlet-name>
+    <servlet-class>servlet.Join</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userInfoChange</servlet-name>
+    <servlet-class>servlet.userInfoChange</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Advice</servlet-name>
+    <servlet-class>servlet.Advice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjaxDeleteServlet</servlet-name>
+    <url-pattern>/servlet/AjaxDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxUpdateServlet</servlet-name>
+    <url-pattern>/servlet/AjaxUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Refresh</servlet-name>
+    <url-pattern>/servlet/Refresh</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxApplicationServlet</servlet-name>
+    <url-pattern>/servlet/AjaxApplicationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxView</servlet-name>
+    <url-pattern>/servlet/AjaxView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FastRelease</servlet-name>
+    <url-pattern>/servlet/FastRelease</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetOrderinfo</servlet-name>
+    <url-pattern>/servlet/GetOrderinfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListShowing</servlet-name>
+    <url-pattern>/servlet/ListShowing</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChatResponse</servlet-name>
+    <url-pattern>/servlet/ChatResponse</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Join</servlet-name>
+    <url-pattern>/servlet/Join</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userInfoChange</servlet-name>
+    <url-pattern>/servlet/userInfoChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Advice</servlet-name>
+    <url-pattern>/servlet/Advice</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

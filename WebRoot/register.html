@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title>拼车网</title>
+<meta charset="UTF-8">
+<link type="text/css" href="themes/css/v3/reset.css" rel="stylesheet">
+<link type="text/css" href="themes/css/v3/public.css" rel="stylesheet">
+<link type="text/css" href="themes/css/v3/register.css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico" />
+<script src="themes/js/jquery.min.js" type="text/javascript"></script>
+<script src="themes/js/jquery.form.js" type="text/javascript"></script>
+<script src="themes/js/json.parse.js" type="text/javascript"></script>
+<script type="text/javascript">
+	 var bool1 = false;var bool2=false;var bool3 = false;var bool4 = false;var bool5 = false;var bool6=false;
+	 window.onload = function(){          //暂时用来查错误的一个主要运行函数
+	     setInterval(function(){
+	    	 judgeName();
+	    	 judgePassword();
+	    	 judgeRepassword();
+	    	 judgeEmail();
+	    	 judgeTell();
+	    	 judgeRead();
+	     },500);	  
+	   };
+	
+	function loginClick(){
+	  var oLoginDiv = document.getElementById("loginDiv");
+	  oLoginDiv.style.display="block";
+      var oRegisterDiv = document.getElementById("registerDiv");
+	  oRegisterDiv.style.display="none";
+	}
+	   function judgeName(){                       //判断username
+		   bool1=false;
+		   var oTxt1 = document.getElementById("username");
+	       var re1 = /^[a-z]\w{3,5}$/i;
+	       
+	       if(oTxt1.value){
+	        	$(".input_div1 span").html('<img src="themes/images/v3/text.png"><font color=red>请输入以字母开头的4-6位无标点id</font>');
+	    	    if(re1.test(oTxt1.value)){
+					$(".input_div1 span").html('<img src="themes/images/v3/success.png">');
+	    	    	bool1=true;
+	    	    }
+	       }else{
+	       		
+	       		$(".input_div1 span").html('<img src="themes/images/v3/text.png"><font color=red>账户名不能为空!</font>');
+	       			       		
+				$(".btn").val('注册').removeAttr('disabled');
+	       }
+	   }
+	   function judgePassword(){                  //判断密码
+		   bool2=false;
+		   var oTxt2 = document.getElementById("password1");
+	       var re2 = /.{6,}/;
+	       if(oTxt2.value){
+	       		$(".input_div3 span").html('<img src="themes/images/v3/text.png"><font color=red>密码至少6位以上</font>');
+	    	    if(re2.test(oTxt2.value)){
+					$(".input_div3 span").html('<img src="themes/images/v3/success.png">');
+	    	    	bool2=true;
+	    	    }
+	       }else{
+	    	   
+	       		$(".input_div3 span").html('<img src="themes/images/v3/text.png"><font color=red>密码不能为空!</font>');
+	       		       		
+				$(".btn").val('注册').removeAttr('disabled');
+	       }
+	   }
+	   function judgeRepassword(){                //判断确认密码     
+		   bool3=false;
+		   var oTxt3 = document.getElementById("password2");
+		   var p = document.getElementById("password1")
+	       if(oTxt3.value){
+			   $(".input_div4 span").html('<img src="themes/images/v3/text.png"><font color=red>两次输入的密码不一致!</font>');
+	    	   if(oTxt3.value==p.value){
+		    	   $(".input_div4 span").html('<img src="themes/images/v3/success.png">');
+		    	   bool3=true;
+		       }
+	       }else{                                //添加else确保在文本框中没有内容的时候不会出现绿色的小框和灰色的提醒字体
+	    	   
+	       		$(".input_div4 span").html('<img src="themes/images/v3/text.png"><font color=red>密码不能为空!</font>');
+	       		       		
+				$(".btn").val('注册').removeAttr('disabled');
+	       }
+	   }
+	   function judgeEmail(){                     //判断邮箱
+		   bool4=false;
+		   var oTxt4 = document.getElementById("mail");
+	       var re4 = /^\w+@([a-z0-9]+\.)+[a-z]+$/i;
+	       if(oTxt4.value){
+				$(".input_div2 span").html('<img src="themes/images/v3/text_error.png"><font color=red>邮箱格式不正确!</font>');
+	    	    if(re4.test(oTxt4.value)){
+	    	    	$(".input_div2 span").html('<img src="themes/images/v3/success.png">');
+	    	    	bool4=true;
+	    	    }
+	       }else{
+	    	   
+	       		$(".input_div2 span").html('<img src="themes/images/v3/text.png"><font color=red>邮箱不能为空!</font>');
+	       		       		
+				$(".btn").val('注册').removeAttr('disabled');
+	       }  
+	   }
+	   function judgeTell(){                      //判断电话
+		   bool5=false;
+		   var oTxt5 = document.getElementById("tell");
+	       var re5 = /^[1][358][0-9]{9}$/;
+	       if(oTxt5.value){
+				$(".input_div5 span").html('<img src="themes/images/v3/text_error.png"><font color=red>请输入正确的手机号!</font>');
+	    	    if(re5.test(oTxt5.value)){
+	    	    	$(".input_div5 span").html('<img src="themes/images/v3/success.png">');
+	    	    	bool5=true;
+	    	    }
+	       }else{
+	    	   
+	       		$(".input_div5 span").html('<img src="themes/images/v3/text.png"><font color=red>手机号不能为空!</font>');
+	       		       		
+				$(".btn").val('注册').removeAttr('disabled');
+	       } 
+	   }
+	   function	judgeRead(){
+	   		bool6=false;
+	   		if(document.getElementById("checkbox").checked==true){
+	   			bool6=true;
+	   		}
+	   }
+       function succeed(){
+		 if(bool1&&bool2&&bool3&&bool4&&bool5&&bool6){
+		 	$(".input_div1 span,.input_div2 span,.input_div3 span,.input_div4 span,.input_div6 span,.input_div5 span").html("");
+			$(".btn").val('注册中...').attr('disabled','disabled');
+			 document.registerform.submit();
+			 return true;
+		  }else{
+			 alert('请正确填写信息');
+			 return false;
+		 }
+	 }
+	  
+	 
+	 function reading(){
+	 var oLoginDiv = document.getElementById("login");
+	 oLoginDiv.style.display="none";
+	 var oRegisterDiv = document.getElementById("reading");
+	 oRegisterDiv.style.display="block";
+	 } 
+	 function closeReading(){
+	 var oLoginDiv = document.getElementById("login");
+	 oLoginDiv.style.display="block";
+	 var oRegisterDiv = document.getElementById("reading");
+	 oRegisterDiv.style.display="none";
+	 } 
+</script>
+<style>
+.input_div span{ background:#FFF;}
+</style>
+<!--[if IE 6]>
+<script src="themes/js/DD_belatedPNG.js"  type="text/javascript"></script>
+<script>DD_belatedPNG.fix('.png_bg');</script>
+<![endif]-->
+</head>
+<body>
+	<div id="header">
+		<div class="header">
+			<h1 class="png_bg">拼车网！！！</h1>
+		
+			<a class="png_bg" href="homePage.jsp">返回主页</a>
+		</div>
+	</div>
+	
+	<div class="register_content">
+	
+		<ul class="step_ul step1 clear">
+			<li class="li1">01、填写资料</li>
+			<li class="li2">02、完成注册</li>
+		</ul>
+		
+		 <form name="registerform" id='registerForm' action="registerResult.jsp" method="post" style="padding:60px 40px 88px 40px;font-family:Microsoft Yahei">
+			<div class="div_form clear ">
+				<label>账户名：</label>
+				<div class="input_div input_div1">
+					<input id="username" name="username" type="text" placeholder="请输入以字母开头的4-6位无标点id" maxlength="24">
+					<span></span>
+				</div>
+			</div>
+			<div class="div_form clear ">
+				<label>常用的邮箱帐号：</label>
+				<div class="input_div input_div2" >
+					<input id="mail" name="email"  type="text" placeholder="请填写正确的邮箱，以便接收账号激活邮件" maxlength="64">
+					<span></span>
+				</div>
+			</div>
+			<div class="div_form clear ">
+				<label>请创建一个密码：</label>
+				<div class="input_div input_div3">
+					<input id="password1" name="password" type="password" placeholder="最少 6个字符，区分大小写" maxlength="32">
+					<span></span>
+				</div>
+			</div>
+			<div class="div_form clear ">
+				<label>重新输入密码：</label>
+				<div class="input_div input_div4">
+					<input id="password2" name="repassword" type="password" placeholder="再次输入密码" maxlength="32">
+					<span></span>
+				</div>
+			</div>
+			<div class="div_form clear ">
+				<label>请输入您的手机号：</label>
+				<div class="input_div input_div5">
+					<input id="tell" name="tell" type="text" placeholder="请输入正确的手机号，以便接收我们的消息" maxlength="32">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="div_form clear ">
+				<label></label>
+				<div class="input_div input_div6" data="0" id="agreement">
+				 <input type="checkbox" name="checkbox" id="checkbox">
+					<a onClick="reading()">我已阅读并接受《拼车网用户服务协议》</a>
+                    <span></span>
+				</div>
+			</div>
+            
+			<div class="div_form clear ">
+				<label></label>
+				<div class="input_div">
+					<input id="btn" class="btn" onclick="succeed()" type="button" value="注册" />
+				</div>
+			</div>
+			
+		</form>
+		
+		<div class="reading" id="reading" style="display:none">
+			　<p>1、自愿参加自发组织的活动，自愿拼乘车主车辆、委托车主帮助自己完成活动过程;</p>
+			　<p>2、车辆行驶过程中，不得干扰驾车人驾驶车辆并有义务提请驾车人不得酒后驾车或身体不适时驾车;</p>
+			　<p>3、自愿承担活动中产生的汽油费、过路、过桥费等因车辆产生的费用;</p>
+			　<p>4、车辆行驶过程中发生故障应积极配合驾车人解除故障;</p>
+			　<p>5、发生交通事故后，协助驾车人报警、维护现场，配合解决与第三方纠纷;</p>
+			 <button class="btn3" href="login.jsp" onClick="closeReading()">确定</button>
+		</div>
+		
+		<div class="reg_login" id="login">
+			<p>已有帐号？</p>
+			<a class="btn2" href="login.html">登录</a>
+		</div>
+		<div class="bg"></div>
+	</div>
+	
+	<!-- footer start -->
+<div id="footer" class="clear">
+    <h1 class="png_bg">拼车网</h1>
+    <div class="friendLink clear">
+        <a  href="#" target="_blank" title="隐私政策" rel="nofollow">隐私政策</a>
+        <a href="#" target="_blank" rel="nofollow">服务条款</a>
+        <a href="#" target="_blank" rel="nofollow">关于我们</a>
+        <a href="#" target="_blank" rel="nofollow">拼车网招聘</a>
+        <a href="#" target="_blank" rel="nofollow">联系我们</a>
+        <a href="#" target="_blank" rel="nofollow">友情链接</a>
+    </div>
+    <p>沈阳市东北大学浑南校区2舍b区237黄钏</p>
+    <div class="weixin">
+        <img src="themes/images/v3/weiyi_qr.png" alt="" />
+        <h3>关注微一官网微信</h3>
+    </div>
+</div>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5d12e2b4eed3b554ae941c0ac43c330a' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- footer end -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
