@@ -1,2 +1,2 @@
 # NEUCarsharing
-a web application![](./gg.gif)
+a web application![](gg.gif)
