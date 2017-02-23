@@ -1,4 +1,2 @@
 # NEUCarsharing
-a web application
-![](neucarsharing.gif)
-jkl
+a web application![](neucarsharing.gif)
