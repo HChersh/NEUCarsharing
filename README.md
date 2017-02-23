@@ -1,2 +1,0 @@
-# NEUCarsharing
-![](neucarsharing.gif)
